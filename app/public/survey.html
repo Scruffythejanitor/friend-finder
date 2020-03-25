@@ -41,8 +41,8 @@
                     <input type="text" class="form-control" id="imageURL" placeholder="Put Your Image URL Here">
                   </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select0">Example select</label>
+                  <select class="form-control" id="select0">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -61,8 +61,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select2">Example select</label>
+                  <select class="form-control" id="select2">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -71,8 +71,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select3">Example select</label>
+                  <select class="form-control" id="select3">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -81,8 +81,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select4">Example select</label>
+                  <select class="form-control" id="select4">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -91,8 +91,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select5">Example select</label>
+                  <select class="form-control" id="select5">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -101,8 +101,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select6">Example select</label>
+                  <select class="form-control" id="select6">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -111,8 +111,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select7">Example select</label>
+                  <select class="form-control" id="select7">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -121,8 +121,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select8">Example select</label>
+                  <select class="form-control" id="select8">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -131,8 +131,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="select1">Example select</label>
-                  <select class="form-control" id="select1">
+                  <label for="select9">Example select</label>
+                  <select class="form-control" id="select9">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -140,6 +140,7 @@
                     <option>5</option>
                   </select>
                 </div>
+                
                 <button type="submit" id="submit" class="btn btn-primary">Submit</button>
               </form>
             </div>
@@ -153,6 +154,24 @@
     $('#submit').on('click', function(){
         event.preventDefault()
 
+        var userName = $('#userName').val()
+        var userImage = $('#imageURL').val()
+        var userScores = []
+
+        for (var i = 0; i < 10; i++) {
+            var scores = $('#select' + i).val();
+            // console.log(scores);
+            
+            userScores.push(scores)
+        }
+        console.log(userName, userImage, userScores);
+        
+        function empty() {
+          $('#userName').val('')
+          $('#imageURL').val('')
+        }
+
+        empty()
         
     });
   </script>
