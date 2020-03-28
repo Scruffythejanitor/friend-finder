@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  <title>Friend Finder Survey</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-header"><h1>Time To find your Match!</h1></div>
+          <div class="card-body">Fill out the forms below to find your love!</div>
+        </div>
+        <br><br>
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="userName">Your Name</label>
+                <input type="text" class="form-control" id="userName" placeholder="John Johnnington" required="true">
+              </div>
+              <div class="form-group">
+                <label for="imageURL">Your Name</label>
+                <input type="text" class="form-control" id="imageURL" placeholder="http://yourimageurl.com" required="true">
+              </div>
+              <div class="form-group">
+                <label for="q1">How many eyes are you looking for in a face?</label>
+                <select class="form-control" id="q1" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q2">Slurm is my favorite soda.</label>
+                <select required class="form-control" id="q2" >
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q3">How interested are you in Blurnsball?</label>
+                <select class="form-control" id="q3" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q4">Richard Nixons Head is my favorite president.</label>
+                <select class="form-control" id="q4" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q5">Luna Park is the happiest place off Earth.</label>
+                <select class="form-control" id="q5" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q6">How much do you beilive in the lost city of Atlanta?</label>
+                <select class="form-control" id="q6" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q7">Do you remember the foating brains?</label>
+                <select class="form-control" id="q7" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q8">All my Circuts is my favorite show.</label>
+                <select class="form-control" id="q8" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q9">How much do you love spending X-mas baricaded in your house?</label>
+                <select class="form-control" id="q9" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q10">Everybody Loves Hypnotoad.</label>
+                <select class="form-control" id="q10" required>
+                  <option disabled selected>Choose Option</option>
+                  <option value="1">1 (Least)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Most)</option>
+                </select>
+              </div>
+              <button id="submit" type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+  <!--Modal-->
+  <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="friendModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="friendModalTitle">Your Match!</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body text-center">
+          <h1 id="friend-name"></h1>
+          <img height="200px" id="friend-img" >
+        </div>
+        <div class="modal-footer">
+          
+          <button type="submit" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+  <script>
+    $('#submit').on('click', function(){
+      event.preventDefault()
+      
+      var newUser = {
+        name: $('#userName').val(),
+        image: $('#imageURL').val(),
+        scores: [
+          $('#q1').val(),
+          $('#q2').val(),
+          $('#q3').val(),
+          $('#q4').val(),
+          $('#q5').val(),
+          $('#q6').val(),
+          $('#q7').val(),
+          $('#q8').val(),
+          $('#q9').val(),
+          $('#q10').val()
+        ]
+      }
+      $.post("/api/friends", newUser, function (data){
+        $('#friend-name').text(data.name);
+        $('#friend-img').attr("src", data.photo);
+
+        $('#friendModal').modal('toggle')
+
+      })
+     
+    })
+  </script>
+</html>

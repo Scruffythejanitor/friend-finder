@@ -8,30 +8,34 @@ module.exports = function (app) {
     });
 
     app.post("/api/friends", function (req, res) {
-        var closeResult = {
+        console.log(req.body);
+        
+        var matchFriend = {
             name: "",
             photo: "",
-            characterContrast: Infinity
+            difference: 40
         };
-        var personInfo = req.body;
-        var personChoices = personInfo.scores;
-        var sumOfContrast;
+        var userInfo = req.body;
+        var personChoices = userInfo.scores;
+        var minNumber = 0
         for (var i = 0; i < friends.length; i++) {
-            var selectedPerson = friends[i];
-            sumOfContrast = 0;
-            console.log(selectedPerson.name);
-            for (var j = 0; j < selectedPerson.scores.length; j++) {
-                var selectedPersonScore = selectedPerson.scores[j];
+            var pickedFriend = friends[i];
+            
+            console.log(pickedFriend.name);
+            for (var j = 0; j < pickedFriend.scores.length; j++) {
+                var pickedFriendScore = pickedFriend.scores[j];
                 var userScore = personChoices[j];
-                sumOfContrast += Math.abs(parseInt(userScore) - parseInt(selectedPersonScore))
+                minNumber += Math.abs(parseInt(userScore) - parseInt(pickedFriendScore))
             }
-            if (sumOfContrast <= closeResult.characterContrast) {
-                closeResult.name = selectedPerson.name;
-                closeResult.photo = selectedPerson.photo;
-                closeResult.characterContrast = sumOfContrast
+            if (minNumber <= matchFriend.difference) {
+                matchFriend.name = pickedFriend.name;
+                matchFriend.photo = pickedFriend.photo;
+                matchFriend.difference = minNumber
             }
         }
-        friends.push(personInfo);
-        res.json(closeResult)
+        console.log(matchFriend.photo);
+        
+        friends.push(userInfo);
+        res.json(matchFriend)
     })
 };
