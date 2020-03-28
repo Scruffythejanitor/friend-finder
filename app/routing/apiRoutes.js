@@ -7,12 +7,27 @@ module.exports = function (app) {
   });
 
   app.post('/api/friends', function(req, res){
-    console.log(req.body);
+    var differenceMax = 40;
+    var userScores = req.body.scores;
+    var matchFriend;
+    
+    friends.forEach(function (friend) {
+      var differenceMin = 0;
+      for (i = 0; i < friend.scores.length; i++) {
+        differenceMin += Math.abs(friend.scores[i] - userScores.scores[i]);
+      }
+      if (differenceMin < differenceMax) {
+        maxDifference = differenceMin;
+        matchFriend = friend;
+      };
+    });
+    response.json(matchFriend);
+    friends.push(request.body);
+});
 
-    var userScores = req.body.scores
 
-    console.log(userScores);
     
     
-  })
-}
+    
+  
+};
