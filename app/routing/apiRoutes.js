@@ -7,22 +7,33 @@ module.exports = function (app) {
   });
 
   app.post('/api/friends', function(req, res){
-    var differenceMax = 40;
-    var userScores = req.body.scores;
-    var matchFriend;
-    
-    friends.forEach(function (friend) {
-      var differenceMin = 0;
-      for (i = 0; i < friend.scores.length; i++) {
-        differenceMin += Math.abs(friend.scores[i] - userScores.scores[i]);
+    var closeResult = {
+      name: "",
+      photo: "",
+      characterContrast: Infinity
+  };
+  var personInfo = req.body;
+  console.log(personInfo);
+  
+  var personChoices = personInfo.scores;
+  var sumOfContrast;
+  for (var i = 0; i < friends.length; i++) {
+      var selectedPerson = friends[i];
+      sumOfContrast = 0;
+      console.log(selectedPerson.name);
+      for (var j = 0; j < selectedPerson.scores.length; j++) {
+          var selectedPersonScore = selectedPerson.scores[j];
+          var userScore = personChoices[j];
+          sumOfContrast += Math.abs(parseInt(userScore) - parseInt(selectedPersonScore))
       }
-      if (differenceMin < differenceMax) {
-        maxDifference = differenceMin;
-        matchFriend = friend;
-      };
-    });
-    response.json(matchFriend);
-    friends.push(request.body);
+      if (sumOfContrast <= closeResult.characterContrast) {
+          closeResult.name = selectedPerson.name;
+          closeResult.photo = selectedPerson.photo;
+          closeResult.characterContrast = sumOfContrast
+      }
+  }
+  friends.push(personInfo);
+  res.json(closeResult)
 });
 
 
